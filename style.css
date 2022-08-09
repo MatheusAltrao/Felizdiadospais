@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #183e4e;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+img {
+  box-shadow: 0px 0px 5px #000;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+button {
+  cursor: pointer;
+  padding: 1rem;
+  color: #fff;
+  background-color: #183e4e;
+  border-radius: 0.4rem;
+  border: none;
+  border: 2px solid #fff;
+  box-shadow: 6px 6px 12px#c5c5c5, -6px -6px 12px #fff;
+}
+
+i {
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  fill: #fff;
+  top: 20px;
+  right: 20px;
+}
+
+.card {
+  background: #639cca;
+  border-radius: 20px;
+  height: 85vh;
+  width: 80vw;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.text {
+  padding: 1em;
+}
+
+img.birthday {
+  max-height: 53vh;
+
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.muted {
+  opacity: 0.8;
+}
+
+.space {
+  height: 100px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .card {
+    flex-direction: row-reverse;
+  }
+  .card img.birthday {
+    width: 100%;
+    max-width: 50vw;
+    max-height: unset;
+  }
+}
+
+@media only screen and (max-height: 640px) {
+  .card {
+    flex-direction: row-reverse;
+  }
+  .card img.birthday {
+    width: 100%;
+    max-width: 50vw;
+    max-height: unset;
+  }
+}
+
+/* section */
+section {
+  position: relative;
+}
+
+/* popup */
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 300px;
+  height: 300px;
+
+  z-index: 999;
+
+  color: #fff;
+  background-color: #183e4e;
+
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  border-radius: 1rem;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.16),
+    0 0 0 1000px rgba(255, 255, 255, 0.95);
+}
+
+.popup.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+#my-canvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  visibility: visible;
+  pointer-events: none;
+}
